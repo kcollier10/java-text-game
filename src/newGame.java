@@ -9,6 +9,7 @@ public class newGame {
         game.playerSetUp();
 
     }
+
     // create a method for the player/user
     public void playerSetUp() {
 
@@ -36,3 +37,12 @@ public class newGame {
         System.out.println("Here are your current stats: ");
         System.out.println("Your current sanity level is: " + playerSanity);
         System.out.println("Your current weapon is: " + playerWeapon);
+    }
+}
+
+// EXTRA GAME LOGIC:
+// if Old Shoe/other weird item as starter, lower starting sanity
+// send on some sort of path with dead ends at the end of 'wrong path' nodes
+// have sanity pills to find
+// include 'enter' key event
+// System.out.println("Press [enter] to continue.");

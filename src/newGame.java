@@ -9,6 +9,7 @@ public class newGame {
     String playerWeapon;
     String playerName;
     String gameOver = "------ZERO SANITY: GAME OVER------";
+    // end game screen?
 //    final int playerInsane = 0;
 
 
@@ -98,21 +99,23 @@ public class newGame {
         int choice;
         choice = myScanner.nextInt();
 
-        if(choice == 1) {
-            choiceField();
-        }
-        if(choice == 2) {
-            choiceForest();
-        }
-        if(choice == 3) {
-            choiceBog();
-        }
-        if(choice == 4) {
-            playerSanity = playerSanity -1;
-            System.out.println("You rock back and forth in place. -1 SANITY");
-            System.out.println("Your current sanity is: " + playerSanity);
-            System.out.println("-----------------------------------------");
-            startingField();
+        switch (choice) {
+            case 1:
+                choiceField();
+                break;
+            case 2:
+                choiceForest();
+                break;
+            case 3:
+                choiceBog();
+                break;
+            case 4:
+                playerSanity = playerSanity -1;
+                System.out.println("You rock back and forth in place. -1 SANITY");
+                System.out.println("Your current sanity is: ." + playerSanity);
+                System.out.println("-----------------------------------------");
+                startingField();
+                break;
         }
 
     }
@@ -128,17 +131,26 @@ public class newGame {
 
         int choice;
         choice = myScanner.nextInt();
+        switch (choice) {
+            case 1:
+                System.out.println("You remember from Jurassic Park that a T-rex's vision is based on movement and apply that logic to whatever is in the bushes.");
+                System.out.println("The rustling gets closer.");
+                System.out.println("It turns out you forgot the most important part of Jurassic Park fields - velociraptors.");
+                System.out.println("By the time you realize your mistake, it's too late. CHOMP.");
+                playerSanity = 0;
+                System.out.println(gameOver);
+                break;
+            case 2:
+                System.out.println("You know you don't want to be here anymore, but you don't want to startle whatever is making that noise.");
+                System.out.println("When you realize the noise is a velociraptor gang, you pick up the pace. Unfortunately, you received a minor chomp for waiting.");
+                playerSanity = playerSanity - (playerSanity/2);
+                System.out.printf("Your sanity is now %d.", playerSanity);
+                break;
+            case 3:
+                System.out.println("GTFO. You escape the field with your sanity only mildly reduced.");
+                playerSanity = playerSanity - 5;
+                System.out.printf("Current sanity is %d.", playerSanity);
 
-        if(choice == 1) {
-            System.out.println("You remember from Jurassic Park that a T-rex's vision is based on movement and apply that logic to whatever is in the bushes.");
-            System.out.println("The rustling gets closer.");
-            System.out.println("It turns out you forgot the most important part of Jurassic Park fields - velociraptors.");
-            System.out.println("By the time you realize your mistake, it's too late. CHOMP.");
-            playerSanity = 0;
-            System.out.println(gameOver);
-        }
-        if(choice == 2) {
-            System.out.println("You know you don't want to be here anymore, but you don't want to startle whatever is making that noise.");
         }
     }
 

@@ -44,38 +44,41 @@ public class newGame {
         System.out.println("You get to choose your first weapon! Choose wisely:");
         System.out.println("Available weapons: nerf gun, feather, old shoe, tophat, spaghetti.");
 
-        String choice;
-        choice = myScanner.nextLine();
 
         // figure out how to use strings here instead of numbers
         // string is an object, so we can't compare it to an int/anything in primitive type
         // String hello = "hello";
         // System.out.println(hello.equalsIgnoreCase("HeLlO"));
 
-        if(choice.equalsIgnoreCase("nerf gun")) {
-            playerWeapon = "nerf gun";
-            playerSanity += 3;
-            System.out.print("Sanity level increased by 3. Current sanity level = " + playerSanity);
-        }
-        if(choice.equalsIgnoreCase("feather")) {
-            playerWeapon = "feather";
-            playerSanity -= 1;
-            System.out.println("Sanity level decreased by 1. Current sanity level = " + playerSanity);
-        }
-        if(choice.equalsIgnoreCase("old shoe")) {
-            playerWeapon = "old shoe";
-            playerSanity += 20;
-            System.out.println("You chose the golden item! Sanity level increased by 20! Current sanity level = " + playerSanity);
-        }
-        if(choice.equalsIgnoreCase("tophat")) {
-            playerWeapon = "tophat";
-            playerSanity -= 5;
-            System.out.println("Sanity level decreased by 5. Class will cost you! Current sanity level = " + playerSanity);
-        }
-        if(choice.equalsIgnoreCase("spaghetti")) {
-            playerWeapon = "spaghetti";
-            playerSanity += 3;
-            System.out.println("Sanity increased by 3 for being patient enough to carry around loose spaghetti. Current sanity level = " + playerSanity);
+        String choice;
+        choice = myScanner.nextLine();
+
+        switch (choice) {
+            case "nerf gun":
+                playerWeapon = "nerf gun";
+                playerSanity += 3;
+                System.out.println("Sanity level increased by 3. Current sanity level = " + playerSanity);
+                break;
+            case "feather":
+                playerWeapon = "feather";
+                playerSanity -= 1;
+                System.out.println("Sanity level decreased by 1. Current sanity level = " + playerSanity);
+                break;
+            case "old shoe":
+                playerWeapon = "old shoe";
+                playerSanity += 20;
+                System.out.println("You chose the golden item! Sanity level increased by 20! Current sanity level = " + playerSanity);
+                break;
+            case "tophat":
+                playerWeapon = "tophat";
+                playerSanity -= 5;
+                System.out.println("Sanity level decreased by 5. Class will cost you! Current sanity level = " + playerSanity);
+                break;
+            case "spaghetti":
+                playerWeapon = "spaghetti";
+                playerSanity += 3;
+                System.out.println("Sanity increased by 3 for being patient enough to carry around loose spaghetti. Current sanity level = " + playerSanity);
+                break;
         }
 
         System.out.println("Your current weapon is: " + playerWeapon);

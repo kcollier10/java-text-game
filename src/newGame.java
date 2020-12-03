@@ -8,7 +8,7 @@ public class newGame {
     int playerSanity;
     String playerWeapon;
     String playerName;
-    String gameOver = "------GAME OVER------";
+    String gameOver = "------ZERO SANITY: GAME OVER------";
 //    final int playerInsane = 0;
 
 
@@ -42,32 +42,37 @@ public class newGame {
         System.out.println("Well hey there, " + playerName + ", I hope you're ready for an adventure!");
         System.out.println("-----------------------");
         System.out.println("You get to choose your first weapon! Choose wisely:");
-        System.out.println("Available weapons: 1 = nerf gun, 2 = feather, 3 = old shoe, 4 = tophat, 5 = spaghetti.");
+        System.out.println("Available weapons: nerf gun, feather, old shoe, tophat, spaghetti.");
 
-        int choice;
-        choice = myScanner.nextInt();
+        String choice;
+        choice = myScanner.nextLine();
 
-        if(choice == 1) {
+        // figure out how to use strings here instead of numbers
+        // string is an object, so we can't compare it to an int/anything in primitive type
+        // String hello = "hello";
+        // System.out.println(hello.equalsIgnoreCase("HeLlO"));
+
+        if(choice.equalsIgnoreCase("nerf gun")) {
             playerWeapon = "nerf gun";
             playerSanity += 3;
             System.out.print("Sanity level increased by 3. Current sanity level = " + playerSanity);
         }
-        if(choice == 2) {
+        if(choice.equalsIgnoreCase("feather")) {
             playerWeapon = "feather";
             playerSanity -= 1;
             System.out.println("Sanity level decreased by 1. Current sanity level = " + playerSanity);
         }
-        if(choice == 3) {
+        if(choice.equalsIgnoreCase("old shoe")) {
             playerWeapon = "old shoe";
             playerSanity += 20;
             System.out.println("You chose the golden item! Sanity level increased by 20! Current sanity level = " + playerSanity);
         }
-        if(choice == 4) {
+        if(choice.equalsIgnoreCase("tophat")) {
             playerWeapon = "tophat";
             playerSanity -= 5;
             System.out.println("Sanity level decreased by 5. Class will cost you! Current sanity level = " + playerSanity);
         }
-        if(choice == 5) {
+        if(choice.equalsIgnoreCase("spaghetti")) {
             playerWeapon = "spaghetti";
             playerSanity += 3;
             System.out.println("Sanity increased by 3 for being patient enough to carry around loose spaghetti. Current sanity level = " + playerSanity);
@@ -128,6 +133,9 @@ public class newGame {
             System.out.println("By the time you realize your mistake, it's too late. CHOMP.");
             playerSanity = 0;
             System.out.println(gameOver);
+        }
+        if(choice == 2) {
+            System.out.println("You know you don't want to be here anymore, but you don't want to startle whatever is making that noise.");
         }
     }
 

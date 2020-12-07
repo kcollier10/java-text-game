@@ -17,7 +17,8 @@ public class Display {
     JLabel labelTitle;
     JPanel panelButton;
     JButton labelButton;
-    Font fontTitle = new Font("Times New Roman", Font.PLAIN, 28);
+    Font fontTitle = new Font("Times New Roman", Font.PLAIN, 50);
+    Font normalFont = new Font("Times New Roman", Font.PLAIN, 25);
 
     public static void main(String[] args) {
 
@@ -52,6 +53,7 @@ public class Display {
         panelButton.setBackground(Color.blue);
 
         labelButton = new JButton("START!");
+        labelButton.setFont(normalFont);
         labelButton.setBackground(Color.black);
         labelButton.setForeground(Color.black);
         labelButton.setText("Click me to start!");

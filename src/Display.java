@@ -21,10 +21,10 @@ public class Display {
 
     public static void main(String[] args) {
 
-        new textGameDisplay();
+        new Display();
     }
 
-    public textGameDisplay() {
+    public Display() {
         // creates window, sets window size, sets background color
         window = new JFrame();
         window.setSize(800, 600);

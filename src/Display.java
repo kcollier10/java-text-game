@@ -9,7 +9,7 @@ import javax.swing.*;
 // The javax.swing.JFrame class is a type of container which inherits the java.awt.Frame class
 // "JPanel, a part of Java Swing package, is a container that can store a group of components. The main task of JPanel is to organize components, various layouts can be set in JPanel which provide better organisation of components, however it does not have a title bar." -geeksforgeeks
 
-public class textGameDisplay {
+public class Display {
 
     JFrame window;
     Container bucket;
@@ -53,7 +53,8 @@ public class textGameDisplay {
 
         labelButton = new JButton("START!");
         labelButton.setBackground(Color.black);
-        labelButton.setForeground(Color.white);
+        labelButton.setForeground(Color.black);
+        labelButton.setText("Click me to start!");
 
 
         panelButton.add(labelButton);

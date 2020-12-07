@@ -1,5 +1,6 @@
 // include imports at beginning of program
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class newGame {
 
@@ -43,8 +44,14 @@ public class newGame {
         System.out.println("Well hey there, " + playerName + ", I hope you're ready for an adventure!");
         System.out.println("-----------------------");
         System.out.println("You get to choose your first weapon! Choose wisely:");
-        System.out.println("Available weapons: nerf gun, feather, old shoe, tophat, spaghetti.");
-
+//        System.out.println("Available weapons: nerf gun, feather, old shoe, tophat, spaghetti.");
+        ArrayList<String> WeaponArray = new ArrayList<String>();
+        WeaponArray.add("nerf gun");
+        WeaponArray.add("feather");
+        WeaponArray.add("old shoe");
+        WeaponArray.add("tophat");
+        WeaponArray.add("spaghetti");
+        System.out.println(WeaponArray);
 
         // figure out how to use strings here instead of numbers
         // string is an object, so we can't compare it to an int/anything in primitive type
@@ -81,6 +88,11 @@ public class newGame {
                 System.out.println("Sanity increased by 3 for being patient enough to carry around loose spaghetti. Current sanity level = " + playerSanity);
                 break;
         }
+
+//        WeaponArray.remove(new String(choice));
+        WeaponArray.remove(choice);
+        System.out.println(WeaponArray);
+        System.out.println();
 
         System.out.println("Your current weapon is: " + playerWeapon);
         System.out.println("Your current sanity level is: " + playerSanity);
@@ -162,6 +174,7 @@ public class newGame {
     public void choiceBog() {
 
         System.out.println("You step into a blanket of humidity and hope for the best.");
+
 
     }
 

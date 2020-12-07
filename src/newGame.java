@@ -1,6 +1,7 @@
 // include imports at beginning of program
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.lang.Thread;
 
 public class newGame {
 
@@ -124,7 +125,12 @@ public class newGame {
             case 4:
                 playerSanity = playerSanity -1;
                 System.out.println("You rock back and forth in place. -1 SANITY");
-                System.out.println("Your current sanity is: ." + playerSanity);
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Your current sanity is: " + playerSanity);
                 System.out.println("-----------------------------------------");
                 startingField();
                 break;

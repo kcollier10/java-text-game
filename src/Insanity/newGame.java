@@ -1,3 +1,5 @@
+package Insanity;
+
 // include imports at beginning of program
 import java.util.Scanner;
 import java.util.ArrayList;

@@ -1,8 +1,9 @@
+package Insanity;
+
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.BorderLayout;
-import java.awt.Button;
 
 
 import javax.swing.*;
@@ -47,6 +48,8 @@ public class Display {
         labelTitle.setText("Don't Lose Your Marbles!");
         labelTitle.setForeground(Color.white);
         labelTitle.setFont(fontTitle);
+        panelTitle.add(labelTitle);
+        bucket.add(panelTitle);
 
         panelButton = new JPanel();
         panelButton.setBounds(300, 400, 200, 100);
@@ -57,11 +60,9 @@ public class Display {
         labelButton.setBackground(Color.black);
         labelButton.setForeground(Color.black);
         labelButton.setText("Click me to start!");
-
-
         panelButton.add(labelButton);
-        panelTitle.add(labelTitle);
-        bucket.add(panelTitle);
+
+
         bucket.add(panelButton);
     }
 }

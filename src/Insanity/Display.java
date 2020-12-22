@@ -1,9 +1,6 @@
 package Insanity;
 
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Font;
-import java.awt.BorderLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,6 +21,8 @@ public class Display {
     Font normalFont = new Font("Times New Roman", Font.PLAIN, 25);
     JPanel mainTextPanel;
     JTextArea mainTextArea;
+    JPanel choiceButtons;
+    JButton choice1, choice2, choice3, choice4;
 
     TitleScreenHandler tsHandler = new TitleScreenHandler();
 
@@ -55,11 +54,13 @@ public class Display {
         labelTitle.setForeground(Color.white);
         labelTitle.setFont(fontTitle);
         panelTitle.add(labelTitle);
-        bucket.add(panelTitle);
+//        bucket.add(panelTitle);
+        bucket.add(panelTitle, BorderLayout.PAGE_START);
 
         panelButton = new JPanel();
         panelButton.setBounds(300, 400, 200, 100);
         panelButton.setBackground(Color.blue);
+
 
         labelButton = new JButton("START!");
         labelButton.setFont(normalFont);
@@ -72,9 +73,12 @@ public class Display {
 
 
         bucket.add(panelButton);
+//        bucket.add(panelButton, BorderLayout.PAGE_END);
     }
 
     public void GameDisplay() {
+        panelTitle.setVisible(false);
+        panelButton.setVisible(false);
 
         mainTextPanel = new JPanel();
         mainTextPanel.setBounds(100, 100, 600, 250);
@@ -90,6 +94,37 @@ public class Display {
         // text-wrapping - if text is too long, it is wrapped automatically
 
         mainTextPanel.add(mainTextArea);
+
+        choiceButtons = new JPanel();
+        choiceButtons.setBounds(250, 350, 300, 150);
+        choiceButtons.setBackground(Color.BLACK);
+        bucket.add(choiceButtons);
+        choiceButtons.setLayout(new GridLayout(4,1));
+
+        choice1 = new JButton("Choice 1");
+        choice1.setBackground(Color.BLACK);
+        choice1.setForeground(Color.green);
+        choice1.setFont(normalFont);
+        choiceButtons.add(choice1);
+
+        choice2 = new JButton("Choice 2");
+        choice2.setBackground(Color.BLACK);
+        choice2.setForeground(Color.green);
+        choice2.setFont(normalFont);
+        choiceButtons.add(choice2);
+
+        choice3 = new JButton("Choice 3");
+        choice3.setBackground(Color.BLACK);
+        choice3.setForeground(Color.green);
+        choice3.setFont(normalFont);
+        choiceButtons.add(choice3);
+
+        choice4 = new JButton("Choice 4");
+        choice4.setBackground(Color.BLACK);
+        choice4.setForeground(Color.green);
+        choice4.setFont(normalFont);
+        choiceButtons.add(choice4);
+
     }
 
     public class TitleScreenHandler implements ActionListener {

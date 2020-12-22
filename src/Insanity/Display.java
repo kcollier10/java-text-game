@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 import javax.swing.*;
@@ -20,6 +22,10 @@ public class Display {
     JButton labelButton;
     Font fontTitle = new Font("Times New Roman", Font.PLAIN, 50);
     Font normalFont = new Font("Times New Roman", Font.PLAIN, 25);
+    JPanel mainTextPanel;
+    JTextArea mainTextArea;
+
+    TitleScreenHandler tsHandler = new TitleScreenHandler();
 
     public static void main(String[] args) {
 
@@ -61,8 +67,37 @@ public class Display {
         labelButton.setForeground(Color.black);
         labelButton.setText("Click me to start!");
         panelButton.add(labelButton);
+        labelButton.addActionListener(tsHandler);
+        // when this is clicked, tsHandler will be called
 
 
         bucket.add(panelButton);
+    }
+
+    public void GameDisplay() {
+
+        mainTextPanel = new JPanel();
+        mainTextPanel.setBounds(100, 100, 600, 250);
+        mainTextPanel.setBackground(Color.green);
+        bucket.add(mainTextPanel);
+
+        mainTextArea = new JTextArea();
+        mainTextArea.setBounds(100, 100, 600, 250);
+        mainTextArea.setBackground(Color.black);
+        mainTextArea.setForeground(Color.green);
+        mainTextArea.setFont(normalFont);
+        mainTextArea.setLineWrap(true);
+        // text-wrapping - if text is too long, it is wrapped automatically
+
+        mainTextPanel.add(mainTextArea);
+    }
+
+    public class TitleScreenHandler implements ActionListener {
+
+        public void actionPerformed(ActionEvent event) {
+            // default style to use handler
+            GameDisplay();
+        }
+
     }
 }

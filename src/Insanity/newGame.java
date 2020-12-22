@@ -1,6 +1,9 @@
+package Insanity;
+
 // include imports at beginning of program
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.lang.Thread;
 
 public class newGame {
 
@@ -29,10 +32,6 @@ public class newGame {
 
         playerSanity = 100;
 
-
-
-
-
         // System.in means this scanner can scan keyboard input
         myScanner = new Scanner(System.in);
 
@@ -59,7 +58,7 @@ public class newGame {
         // System.out.println(hello.equalsIgnoreCase("HeLlO"));
 
         String choice;
-        choice = myScanner.nextLine();
+        choice = myScanner.nextLine().trim().toLowerCase();
 
         switch (choice) {
             case "nerf gun":
@@ -70,7 +69,7 @@ public class newGame {
             case "feather":
                 playerWeapon = "feather";
                 playerSanity -= 1;
-                System.out.println("Sanity level decreased by 1. Current sanity level = " + playerSanity);
+                System.out.println("Light as a feather, stiff as a board. Relax! One sanity lost. Current sanity level = " + playerSanity);
                 break;
             case "old shoe":
                 playerWeapon = "old shoe";
@@ -91,8 +90,11 @@ public class newGame {
 
 //        WeaponArray.remove(new String(choice));
         WeaponArray.remove(choice);
+        System.out.println("Updated weapon list:");
+
         System.out.println(WeaponArray);
         System.out.println();
+        System.out.println("------------------------");
 
         System.out.println("Your current weapon is: " + playerWeapon);
         System.out.println("Your current sanity level is: " + playerSanity);
@@ -124,7 +126,12 @@ public class newGame {
             case 4:
                 playerSanity = playerSanity -1;
                 System.out.println("You rock back and forth in place. -1 SANITY");
-                System.out.println("Your current sanity is: ." + playerSanity);
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Your current sanity is: " + playerSanity);
                 System.out.println("-----------------------------------------");
                 startingField();
                 break;

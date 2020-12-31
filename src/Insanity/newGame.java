@@ -176,6 +176,8 @@ public class newGame {
     public void choiceForest() {
 
         System.out.println("You head into the thick brush and hope for the best.");
+        // add a Shrek appearance
+
     }
 
     public void choiceBog() {

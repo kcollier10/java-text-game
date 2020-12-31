@@ -63,6 +63,7 @@ public class Display {
 
 
         labelButton = new JButton("START!");
+        labelButton.setSize(50, 50);
         labelButton.setFont(normalFont);
         labelButton.setBackground(Color.black);
         labelButton.setForeground(Color.black);
@@ -77,8 +78,8 @@ public class Display {
     }
 
     public void GameDisplay() {
-        panelTitle.setVisible(false);
-        panelButton.setVisible(false);
+        bucket.remove(panelButton);
+        bucket.remove(panelTitle);
 
         mainTextPanel = new JPanel();
         mainTextPanel.setBounds(100, 100, 600, 250);
@@ -96,13 +97,15 @@ public class Display {
         mainTextPanel.add(mainTextArea);
 
         choiceButtons = new JPanel();
-        choiceButtons.setBounds(250, 350, 300, 150);
+        choiceButtons.setBounds(250, 350, 100, 50);
         choiceButtons.setBackground(Color.BLACK);
         bucket.add(choiceButtons);
         choiceButtons.setLayout(new GridLayout(4,1));
+//        choiceButtons.setSize(50, 50);
 
         choice1 = new JButton("Choice 1");
         choice1.setBackground(Color.BLACK);
+        choice1.setSize(50, 50);
         choice1.setForeground(Color.green);
         choice1.setFont(normalFont);
         choiceButtons.add(choice1);
